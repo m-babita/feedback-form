@@ -10,7 +10,7 @@ class FeedbackForm extends Component {
          message: '',
          email:'',
          contact:'',
-         gender:'male'
+         gender:''
       }
     }
 
@@ -36,39 +36,52 @@ class FeedbackForm extends Component {
         })
     }
 
+    handleSubmit = event =>{
+        // alert(`${this.state.name} ${this.state.gender} ${this.state.email} ${this.state.contact}`)
+        event.preventDefault()
+        console.log(`Name: ${this.state.name} Email: ${this.state.email} Contact: ${this.state.contact}`)
+    }
+
   render() {
+
+        const {name, email, contact, gender, message} = this.state
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
+
+          <h1>Feedback Form</h1>
           <div>
               <label>Name </label>
               <input 
                 type= 'text' 
-                value={this.state.name} 
+                value={name} 
                 onChange={this.handleNameChange}/>
           </div>
-
+            <br/>
           <div>
               <label>Email </label>
               <input 
                 type= 'email' 
-                value={this.state.email} 
+                value={email} 
                 onChange={this.handleEmailChange}/>
           </div>
+          <br/>
 
           <div>
               <label>Contact Number </label>
               <input 
                 type= 'tel' 
-                value={this.state.contact} 
+                value={contact} 
+                pattern="[0-9]{10}"
                 onChange={this.handleContactChange}/>
           </div>
+          <br/>
 
           <div>
                 <label>Male</label>
                 <input 
                 type= 'radio'
                 value = 'male' 
-                name='gender'
+                name= {gender}
                 checked={this.value==='male'}
                 onChange={this.handleGenderChange}/>
 
@@ -76,7 +89,7 @@ class FeedbackForm extends Component {
                 <input 
                 type= 'radio'
                 value = 'female'
-                name='gender'
+                name={gender}
                 checked={this.value==='female'}
                 onChange={this.handleGenderChange}/>
 
@@ -85,17 +98,20 @@ class FeedbackForm extends Component {
                 type= 'radio'
                 value = 'other'
                 checked={this.value==='other'}
-                name='gender'
+                name={gender}
                 onChange={this.handleGenderChange}/>
 
           </div>
+          <br/>
           <div>
               <label>Message</label>
               <textarea 
-              value={this.state.message} 
+              value={message} 
               onChange={this.handleMessageChange}></textarea>
           </div>
+          <br/>
           
+          <button>Submit</button>
       </form>
     )
   }
