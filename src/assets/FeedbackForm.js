@@ -24,11 +24,6 @@ function FeedbackForm() {
   const onSubmit = (e) =>{
     e.preventDefault()
     console.log('data',values)
-    const {value} = e.target;
-    setValues((values) =>({
-      ...values,
-      value:''
-    }))
 
   }
 
