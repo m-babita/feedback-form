@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState,useEffect} from 'react'
 import './style.css'
 function FeedbackForm() {
 
@@ -6,7 +6,7 @@ function FeedbackForm() {
     fullName :'',
     email:'',
     contact:'',
-    gender:'male',
+    gender:'',
     language:'',
     message:''
   }
@@ -25,7 +25,10 @@ function FeedbackForm() {
     e.preventDefault()
     console.log('data',values)
 
+    
   }
+
+  // useEffect= (e)=>setValues(e.target.fullName.value='')
 
   return (
     <form onSubmit={onSubmit} >
