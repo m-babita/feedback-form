@@ -38,6 +38,7 @@ input, select{
 
 input[type='radio']{
     width:0.8rem;
+    margin: 0.2rem;
 }
 
 textarea{
