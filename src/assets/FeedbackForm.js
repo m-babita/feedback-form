@@ -3,7 +3,7 @@ import './style.css'
 function FeedbackForm() {
 
   const initValues = {
-    fullName:'',
+    fullName :'',
     email:'',
     contact:'',
     gender:'male',
@@ -28,78 +28,79 @@ function FeedbackForm() {
   }
 
   return (
-    <form className='form__container'onSubmit={onSubmit} >
+    <form onSubmit={onSubmit} >
+      <div className='form__container'>
+      <h1 className='heading'>Feedback Form</h1>
 
-    <h1>Feedback Form</h1>
+      <label>Full Name  <br/>
+      <input type='text'
+        name='fullName'
+        value={values.fullName}
+        onChange = {changeInputHandle}
+      />
+      </label> 
+      <br/>
+      
+      <label>Email-Id <br/>
+      <input type='email'
+        name='email'
+        value={values.email}
+        onChange = {changeInputHandle}
+      />
+      </label> 
+      <br/>
+      
+      <label>Phone Contact <br/>
+      <input type= 'tel'
+        name='contact'
+        value={values.contact} 
+        onChange = {changeInputHandle}
+      /> 
+      </label>
+      <br/>
 
-    <label>Full Name : <br/>
-    <input type='text'
-      name='fullName'
-      value={values.fullName}
-      onChange = {changeInputHandle}
-    />
-    </label> 
-    <br/>
-    
-    <label>Email-Id :<br/>
-    <input type='email'
-      name='email'
-      value={values.email}
-      onChange = {changeInputHandle}
-    />
-    </label> 
-    <br/>
-    
-    <label>Phone Contact :<br/>
-    <input type= 'tel'
-      name='contact'
-      value={values.contact} 
-      onChange = {changeInputHandle}
-    /> 
-    </label>
-    <br/>
+      <label>Select language <br/>
+      <select name='language' onChange = {changeInputHandle} value={values.language}>
+        <option value='vanillaJs'>VanillaJS</option>
+        <option value='reactJs'>ReactJS</option>
+        <option value='vueJs'>VueJS</option>
+        <option value='nextJs'>NextJS</option>
 
-    <label>Select language :<br/>
-    <select name='language' onChange = {changeInputHandle} value={values.language}>
-      <option value='vanillaJs'>VanillaJS</option>
-      <option value='reactJs'>ReactJS</option>
-      <option value='vueJs'>VueJS</option>
-      <option value='nextJs'>NextJS</option>
+      </select>
+      </label>
+      <br/>
+      
+      <label>Gender 
+      <div>
+      <input type= 'radio'
+        name='gender'
+        value='male'
+        onChange = {changeInputHandle}
+      />Male 
+      <input type= 'radio'
+        name='gender'
+        value='female'
+        onChange = {changeInputHandle}
+      />Female 
+      <input type= 'radio'
+        name='gender'
+        value='other'
+        onChange = {changeInputHandle}
+      />Other  
+      </div> 
+      </label>
+      <br/>
 
-    </select>
-    </label>
-    <br/>
-    
-    <label>Gender :
-    <div>
-    <input type= 'radio'
-      name='gender'
-      value='male'
-      onChange = {changeInputHandle}
-    />Male 
-    <input type= 'radio'
-      name='gender'
-      value='female'
-      onChange = {changeInputHandle}
-    />Female 
-    <input type= 'radio'
-      name='gender'
-      value='other'
-      onChange = {changeInputHandle}
-    />Other  
-    </div> 
-    </label>
-    <br/>
-
-    <label>Message :<br/>
-    <textarea 
-      name='message'
-      value={values.message} 
-      onChange = {changeInputHandle}
-    /> 
-    </label>
-    <br/>
-    <button>Submit</button>
+      <label>Message <br/>
+      <textarea 
+        name='message'
+        value={values.message} 
+        onChange = {changeInputHandle}
+      /> 
+      </label>
+      <br/>
+      <button>Submit</button>
+    </div>
     </form>
     
   )
