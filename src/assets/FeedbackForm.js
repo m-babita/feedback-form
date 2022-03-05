@@ -37,6 +37,19 @@ function FeedbackForm() {
     e.target.message.value=''
   }
 
+  // const resetValues = {
+  //   fullName :'',
+  //   email:'',
+  //   contact:'',
+  //   gender:'',
+  //   language:'',
+  //   message:''
+  // }
+  // const [reset,setReset] = useState(resetValues)
+
+  // handleClearForm = ()=>{
+  //   setReset(val=>)
+  // }
   // useEffect((e)=>setValues(e.target.fullName.value=''),[])
 
   return (
@@ -111,7 +124,7 @@ function FeedbackForm() {
       /> 
       </label>
       <br/>
-      <button>Submit</button>
+      <button type='button' >Submit</button>
     </div>
     </form>
     
