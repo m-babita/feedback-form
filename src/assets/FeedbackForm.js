@@ -29,14 +29,18 @@ function FeedbackForm() {
 
 
   return (
+    <>
+    <h1 className='heading'>Feedback Form</h1>
     <form onSubmit={onSubmit} >
       <div className='form__container'>
-      <h1 className='heading'>Feedback Form</h1>
+      
 
       <label>Full Name  <br/>
       <input type='text'
         name='fullName'
+        placeholder=' Your Name'
         value={values.fullName}
+        required
         onChange = {changeInputHandle}
       />
       </label> 
@@ -45,7 +49,9 @@ function FeedbackForm() {
       <label>Email-Id <br/>
       <input type='email'
         name='email'
+        placeholder=' example@.com'
         value={values.email}
+        required
         onChange = {changeInputHandle}
       />
       </label> 
@@ -54,7 +60,10 @@ function FeedbackForm() {
       <label>Phone Contact <br/>
       <input type= 'tel'
         name='contact'
-        value={values.contact} 
+        value={values.contact}
+        pattern="[0-9]{10}"
+        placeholder=' Enter valid 10 digit number'
+        required 
         onChange = {changeInputHandle}
       /> 
       </label>
@@ -95,7 +104,9 @@ function FeedbackForm() {
       <label>Message <br/>
       <textarea 
         name='message'
+        placeholder='Type your message here...'
         value={values.message} 
+        required
         onChange = {changeInputHandle}
       /> 
       </label>
@@ -103,7 +114,7 @@ function FeedbackForm() {
       <button >Submit</button>
     </div>
     </form>
-    
+    </>
   )
 }
 

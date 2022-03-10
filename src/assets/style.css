@@ -16,9 +16,9 @@ form{
 }
 .heading{
     padding: 0.5rem;
-    border: 2px solid aliceblue;
-    color: aliceblue;   
+    color: rgb(53, 55, 56);   
     text-align: center;
+    
 }
 label{
     
@@ -59,3 +59,8 @@ button{
     width: fit-content;
 }
 
+@media screen and (max-width:768px){
+    button{
+        background:white;
+    }
+}
