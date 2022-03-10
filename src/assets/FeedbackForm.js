@@ -24,33 +24,9 @@ function FeedbackForm() {
   const onSubmit = (e) =>{
     e.preventDefault()
     console.log('data',values)
-    // const {value} = ;
-    // setValues((values)=> ({
-    //     ...values,
-    //     [value]:''
-    // }))
-    e.target.fullName.value=''
-    e.target.email.value=''
-    e.target.contact.value=''
-    e.target.language.value=''
-    e.target.gender.value=''
-    e.target.message.value=''
+    setValues(initValues);
   }
 
-  // const resetValues = {
-  //   fullName :'',
-  //   email:'',
-  //   contact:'',
-  //   gender:'',
-  //   language:'',
-  //   message:''
-  // }
-  // const [reset,setReset] = useState(resetValues)
-
-  // handleClearForm = ()=>{
-  //   setReset(val=>)
-  // }
-  // useEffect((e)=>setValues(e.target.fullName.value=''),[])
 
   return (
     <form onSubmit={onSubmit} >
@@ -124,7 +100,7 @@ function FeedbackForm() {
       /> 
       </label>
       <br/>
-      <button type='button' >Submit</button>
+      <button >Submit</button>
     </div>
     </form>
     
