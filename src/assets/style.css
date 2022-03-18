@@ -1,17 +1,19 @@
+body{
+    background-image: linear-gradient(to right, rgb(69, 100, 100), rgb(68, 92, 92));
+}
 form{
     margin: 0.5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 .form__container{
-    width: 50%;
-    background: rgb(69, 100, 100);
-    box-shadow:5px 6px 5px #888888;
+    width: 40%;
+    background: rgba(138, 153, 161, 0.5);
+    box-shadow:5px 5px 15px;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 2rem;
     
 }
 .heading{
@@ -22,7 +24,7 @@ form{
 }
 label{
     
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: aliceblue;
 }
 
@@ -33,7 +35,6 @@ input, select{
     border: none;
     border-radius: 5px;
     height: 3rem;
-   
 }
 
 input[type='radio']{
@@ -52,15 +53,29 @@ button{
     margin: 1rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background: rgb(241, 143, 113);
+    background: rgb(245, 159, 133);
     border: none;
     box-shadow: none;
     border-radius: 5px;
     width: fit-content;
 }
 
-@media screen and (max-width:768px){
-    button{
-        background:white;
+button:hover{
+    background-color: rgb(207, 143, 123);
+}
+
+@media screen and (max-width:500px){
+    .form__container{
+        width: 80%;
     }
+    input, select{
+        font-size: 0.9rem;
+    }
+    input[type='radio']{
+        width:0.6rem;
+    }
+    label{
+        font-size: 1rem;
+    }
+
 }

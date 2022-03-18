@@ -6,8 +6,8 @@ function FeedbackForm() {
     fullName :'',
     email:'',
     contact:'',
-    gender:'',
-    language:'',
+    gender:'other',
+    language:'reactJs',
     message:''
   }
 
@@ -17,13 +17,14 @@ function FeedbackForm() {
     const {name, value} = e.target;
     setValues((values)=> ({
         ...values,
-        [name]:value
+        [name]:  value
     }))
   }
 
   const onSubmit = (e) =>{
     e.preventDefault()
     console.log('data',values)
+    alert("Your form has been submitted")
     setValues(initValues);
   }
 
@@ -49,7 +50,7 @@ function FeedbackForm() {
       <label>Email-Id <br/>
       <input type='email'
         name='email'
-        placeholder=' example@.com'
+        placeholder=' example@app.com'
         value={values.email}
         required
         onChange = {changeInputHandle}
@@ -86,16 +87,19 @@ function FeedbackForm() {
         name='gender'
         value='male'
         onChange = {changeInputHandle}
+        checked = {values.gender === 'male' }
       />Male 
       <input type= 'radio'
         name='gender'
         value='female'
         onChange = {changeInputHandle}
+        checked = {values.gender === 'female' }
       />Female 
       <input type= 'radio'
         name='gender'
         value='other'
-        onChange = {changeInputHandle}
+        onChange = {changeInputHandle} 
+        checked = {values.gender === 'other' }
       />Other  
       </div> 
       </label>
