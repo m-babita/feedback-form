@@ -17,14 +17,14 @@ function FeedbackForm() {
     const {name, value} = e.target;
     setValues((values)=> ({
         ...values,
-        [name]:  value
+        [name] : value
     }))
   }
 
   const onSubmit = (e) =>{
     e.preventDefault()
     console.log('data',values)
-    alert("Your form has been submitted")
+    alert("Your form has been submitted!")
     setValues(initValues);
   }
 
